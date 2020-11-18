@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="SpeedReading.SpeedReaderControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:TextDrawer="clr-namespace:SpeedReading.Text"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="600">
+    <Grid Background="Black" MouseUp="Grid_MouseUp">
+        <Border CornerRadius="10" Background="#CBCBCB" Width="380" Height="120">
+            <StackPanel Orientation="Vertical" Margin="10">
+                <Grid Width="339" Height="80">
+                    <Border Background="White" CornerRadius="10"/>
+                    <Line X1="0" Y1="0" X2="1" Y2="0" Stretch="Fill" Height="5" Stroke="Black" StrokeThickness="2" VerticalAlignment="Top" Margin="10,7,10,0"/>
+                    <Line X1="0" Y1="0" X2="1" Y2="0" Stretch="Fill" Height="5" Stroke="Black" StrokeThickness="2" VerticalAlignment="Bottom" Margin="10,0,10,7"/>
+
+                    <Line X1="0" Y1="0" X2="0" Y2="10"  Width="5" Stroke="Black" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,7,0,0"/>
+                    <Line X1="0" Y1="0" X2="0" Y2="10"  Width="5" Stroke="Black" StrokeThickness="2" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,7"/>
+                    <!--<TextBlock Text="Testing" FontFamily="Arial" FontSize="36" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
+                    <TextDrawer:DrawTextControl x:Name="textDrawer"/>
+                </Grid>
+                <Grid>
+                    <ComboBox Name="cbSpeedSetting" HorizontalAlignment="Right" Margin="0,5,0,0" SelectionChanged="cbSpeedSetting_SelectionChanged">
+                        <ComboBoxItem>Slow</ComboBoxItem>
+                        <ComboBoxItem IsSelected="True">Normal</ComboBoxItem>
+                        <ComboBoxItem>Fast</ComboBoxItem>
+                    </ComboBox>
+                </Grid>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
